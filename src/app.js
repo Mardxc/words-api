@@ -5,7 +5,11 @@ import wordsRoutes from "./routes/words.route";
 
 const app = express();
 
-app.set("port", 8080);
+require('dotenv').config();
+
+const PORT = process.env.PORT;
+
+app.set("port", PORT);
 app.set("json spaces", 2);
 
 app.use(morgan("dev"));
